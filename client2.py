@@ -16,11 +16,11 @@ option = st.radio("작성을 원하는 항목을 선택하세요:", ("단어번�
 if st.button("작성 요청 보내기"):
     if option == "단어번역":
         # 단어번역 작성 API에 POST 요청을 보냅니다.
-        response = requests.post("https://3l76j7rd7wnfbjtvpmc4paiqry0jctri.lambda-url.ap-northeast-2.on.aws/essay/invoke",
+        response = requests.post("http://14.39.221.117:8000/essay/invoke",
                                  json={'input': {'topic': topic}})
     else:
         # 잉한 작성 API에 POST 요청을 보냅니다.
-        response = requests.post("https://3l76j7rd7wnfbjtvpmc4paiqry0jctri.lambda-url.ap-northeast-2.on.aws/poem/invoke",
+        response = requests.post("http://14.39.221.117:8000/poem/invoke",
                                  json={'input': {'topic': topic}})
 
     # 응답을 JSON 형식으로 받아와서 출력합니다.
